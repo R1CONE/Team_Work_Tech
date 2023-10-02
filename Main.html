@@ -1,123 +1,320 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css" />
-    <title>Firma sprzątująca</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firma sprzątująca</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
+
+    .main {
+      display: grid;
+      height: 50vmax;
+      place-items: center;
+    }
+
+    /* Заголовок */
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    header img {
+      width: 190px;
+      height: 100px;
+    }
+
+    /* Навигация */
+    nav {
+      background-color: #444;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+    }
+
+    nav a:hover {
+      background-color: #555;
+    }
+
+    /* Общий контент */
+    .content {
+      padding: 20px;
+    }
+
+    /* Контейнер для сотрудников */
+    .employee-container {
+      display: flex;
+      align-items: center;
+      clear: both;
+      margin-bottom: 20px;
+    }
+
+    /* Левая половина сотрудника */
+    .left-half {
+      flex: 1;
+      padding: 20px;
+    }
+
+    /* Правая половина сотрудника */
+    .right-half {
+      flex: 1;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Информация о сотруднике */
+    .employee-info {
+      margin-top: 20px;
+    }
+
+    /* Панель прокрутки */
+    .scrolling-panel-container {
+      width: 300px;
+      overflow-x: auto;
+    }
+
+    .scrolling-panel {
+      display: flex;
+    }
+
+    .left-image {
+      float: left;
+    }
+
+    .right-image {
+      float: right;
+    }
+
+    .clearfix::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    /* Контейнер с изображениями */
+    .big-image-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 1000px;
+      height: 800px;
+    }
+
+    .image {
+      position: absolute;
+      width: 500px;
+      height: 400px;
+    }
+
+    .image:nth-child(1) {
+      top: 0;
+      left: 0;
+    }
+
+    .image:nth-child(2) {
+      top: 0;
+      left: 500px;
+    }
+
+    .image:nth-child(3) {
+      top: 400px;
+      left: 0;
+    }
+
+    .image:nth-child(4) {
+      top: 400px;
+      left: 500px;
+    }
+
+    /* Галерея изображений */
+    .image-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    /* Стили для отдельного изображения */
+    .image-item {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .image-item img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Сервисы */
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .service {
+      flex: 1;
+      max-width: 300px;
+      margin: 10px;
+      text-align: center;
+    }
+
+    .my-button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    .centered-text {
+      text-align: center;
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <img src="https://i.ibb.co/6Dv4gtC/png-transparent-maid-service-cleaner-cleaning-cleanliness-computer-icons-others-miscellaneous-apartm.png"
-             height="80" width="400">
-        <h1>firma sprzątająca</h1>
-    </header>
-    <nav>
-        <a href="#">o naszej firmy </a>
-        <a href="#">Nasi pracownicy</a>
-        <a href="#">portfolio</a>
-        <a href="#">gdzie jesteśmy</a>
-    </nav>
-    <div class="content">
-        <h1 class="center-text">O naszej firmie</h1>
-        <h2 class="center-text">Zapraszamy!</h2>
-        <h3 class="center-text">
-            "Nasza firma sprzątająca to ekspert w dziedzinie utrzymania czystości.<p>
-                Zajmujemy się
-                kompleksowym sprzątaniem mieszkań,
-            <p> biur i innych przestrzeni. Nasza profesjonalna i
-            <p> doświadczona ekipa gwarantuje, że Twoje miejsce
-            <p> zawsze będzie błyszczeć. Pozwól nam zająć się brudem,
-            <p> a Ty ciesz się czystym i świeżym otoczeniem!"
-        </h3>
+  <header>
+    <img
+      src="https://i.ibb.co/6Dv4gtC/png-transparent-maid-service-cleaner-cleaning-cleanliness-computer-icons-others-miscellaneous-apartm.png"
+      height="80" width="400">
+    <h1 class="centered-text">firma sprzątająca</h1>
+  </header>
+  <nav>
+    <a href="#">o naszej firmy </a>
+    <a href="#">Nasi pracownicy</a>
+    <a href="#">portfolio</a>
+    <a href="#">gdzie jesteśmy</a>
+  </nav>
+  <div class="content">
+    <h1 class="centered-text">O naszej firmie</h1>
+    <h2 class="centered-text">Zapraszamy!</h2>
+    <h3 class="centered-text">"Nasza firma sprzątająca to ekspert w dziedzinie utrzymania czystości.<p
+        class="centered-text"> Zajmujemy się
+        kompleksowym sprzątaniem mieszkań,
+      <p class="centered-text"> biur i innych przestrzeni. Nasza profesjonalna i
+      <p class="centered-text"> doświadczona ekipa gwarantuje, że Twoje miejsce
+      <p class="centered-text"> zawsze będzie błyszczeć. Pozwól nam zająć się brudem,
+      <p class="centered-text"> a Ty ciesz się czystym i świeżym otoczeniem!"
+    </h3>
+  </div>
+
+  <h1 class="centered-text"> Galeria </h1>
+
+  <hr class="bold-line">
+
+  <h2 class="center-text"> Jesteśmy mistrzami naszego rzemiosła </h2>
+
+  <hr class="bold-line">
+
+
+
+  <div class="image-gallery">
+    <div class="image-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ327HTdvPn0y3Z02Lt5QX4Dl6HOvmROjsRYQ&usqp=CAU"
+        alt="Изображение 1" height="300" width="400">
     </div>
+    <div class="image-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbWfR5l9GGbundSCk1HWZCASOztyN9Am5jgQ&usqp=CAU"
+        alt="Изображение 2" height="1500" width="800">
+    </div>
+    <div class="image-item">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5Nkcnim1fFrmo1HK7BASnp6tGzkUfncHFm6vE1RER01BD4iIO1qLX4QtNw72vuUNgyg&usqp=CAU"
+        alt="Изображение 3" height="10000" width="1600">
+    </div>
+    <div class="image-item">
+      <img src="https://super-cleaning-spb.ru/uploads/s/g/f/l/gflxywmvkvrh/img/full_dGzSJOob.jpg" alt="Изображение 4">
+    </div>
+  </div>
 
-    <h1 class="center-text"> Galeria </h1>
-
-    <hr class="bold-line">
-
-    <h2 class="center-text"> Jesteśmy mistrzami naszego rzemiosła </h2>
-
-    <hr class="bold-line">
 
 
+  <div>
+    <h2>Usługi</h2>
+    <div class="services">
+      <div class="service">
+        <img src="https://th.bing.com/th/id/OIP.-4UYdZ4x_gESyHNUrFFOfAHaE8?w=300&h=200&c=7&r=0&o=5&pid=1.7">
+        <p></p>
+        <button class="my-button">Kupić 10$</button>
+      </div>
+      <div class="service">
+        <img src="https://th.bing.com/th/id/OIP.mIL17lpxHAOdJpDcGR_ITQHaEo?w=260&h=180&c=7&r=0&o=5&pid=1.7">
+        <p>Pranie sofy na sucho</p>
+        <button class="my-button">Kupić 10$</button>
+      </div>
 
-    <div class="image-gallery">
-        <div class="image-item">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ327HTdvPn0y3Z02Lt5QX4Dl6HOvmROjsRYQ&usqp=CAU" alt="Изображение 1" height="300" width="400">
-        </div>
-        <div class="image-item">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbWfR5l9GGbundSCk1HWZCASOztyN9Am5jgQ&usqp=CAU" alt="Изображение 2" height="1500" width="800">
-        </div>
-        <div class="image-item">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5Nkcnim1fFrmo1HK7BASnp6tGzkUfncHFm6vE1RER01BD4iIO1qLX4QtNw72vuUNgyg&usqp=CAU" alt="Изображение 3" height="10000" width="1600">
-        </div>
-        <div class="image-item">
-            <img src="https://super-cleaning-spb.ru/uploads/s/g/f/l/gflxywmvkvrh/img/full_dGzSJOob.jpg" alt="Изображение 4">
-        </div>
+      <div class="service">
+        <img src="https://www.autodela.ru/assets/images/912.jpg" height="140" width="310">
+        <p>Sprzątanie wnętrz</p>
+        <button class="my-button">Kupić 10$</button>
+      </div>
+
+      <div class="service">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl-PQ-rdeVMAecSWXgzF6RgUKQnIbBq2HUxA&usqp=CAU">
+        <p>Sprzątanie całego domu</p>
+        <button class="my-button">Kupić 10$</button>
+      </div>
+
     </div>
 
 
 
     <div>
-        <h2>Usługi</h2>
-        <div class="services">
-            <div class="service">
-                <img src="https://th.bing.com/th/id/OIP.-4UYdZ4x_gESyHNUrFFOfAHaE8?w=300&h=200&c=7&r=0&o=5&pid=1.7">
-                <p>Kompletny, czysty apartament</p>
-                <button class="my-button">Kupić 10$</button>
-            </div>
-            <div class="service">
-                <img src="https://th.bing.com/th/id/OIP.mIL17lpxHAOdJpDcGR_ITQHaEo?w=260&h=180&c=7&r=0&o=5&pid=1.7">
-                <p>Pranie sofy na sucho</p>
-                <button class="my-button">Kupić 10$</button>
-            </div>
-
-            <div class="service">
-                <img src="https://www.autodela.ru/assets/images/912.jpg" height="140" width="310">
-                <p>Sprzątanie wnętrz</p>
-                <button class="my-button">Kupić 10$</button>
-            </div>
-
-            <div class="service">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTl-PQ-rdeVMAecSWXgzF6RgUKQnIbBq2HUxA&usqp=CAU">
-                <p>Sprzątanie całego domu</p>
-                <button class="my-button">Kupić 10$</button>
-            </div>
-
+      <h2>Nasi pracowniki</h2>
+      <div class="services">
+        <div class="service">
+          <img src="https://th.bing.com/th/id/OIP.fnZx3T7AggUyujdLihtDywHaE7?w=271&h=180&c=7&r=0&o=5&pid=1.7">
+          <p>Michal Popov </p>
+          <p>Doświadczenie: 3 lata</p>
+          <p>Numer Telefonu: +5654652353424</p>
+        </div>
+        <div class="service">
+          <img src="https://th.bing.com/th/id/OIP.kqiqY-mVTfWcA1T6dYnRywHaE7?w=278&h=185&c=7&r=0&o=5&pid=1.7">
+          <p>Bob Tac</p>
+          <p>Doświadczenie: 1 lat</p>
+          <p>Numer Telefonu: +235235235324124</p>
         </div>
 
+        <div class="service">
+          <img src="https://th.bing.com/th/id/OIP.d5KltgCOIdZqF3cporjzOQHaFj?w=218&h=180&c=7&r=0&o=5&pid=1.7"
+            height="140" width="310">
+          <p>Sanya Petraszkevicz</p>
+          <p>Doświadczenie: 4 lata</p>
+          <p>Numer Telefonu: +5235235235124</p>
+        </div>
 
+        <div class="service">
+          <img src="https://th.bing.com/th/id/OIP.-DYMZTiwXbA7zwl89ekWnwHaE8?w=258&h=180&c=7&r=0&o=5&pid=1.7">
+          <p>Alek Purzewicz</p>
+          <p>Doświadczenie: 3 lata</p>
+          <p>Numer Telefonu: +3123125414124</p>
+        </div>
 
-        <div>
-            <h2>Nasi pracowniki</h2>
-            <div class="services">
-                <div class="service">
-                    <img src="https://th.bing.com/th/id/OIP.fnZx3T7AggUyujdLihtDywHaE7?w=271&h=180&c=7&r=0&o=5&pid=1.7">
-                    <p>Kompletny, czysty apartament</p>
-                    <p>Koszt: $50</p>
-                </div>
-                <div class="service">
-                    <img src="https://th.bing.com/th/id/OIP.kqiqY-mVTfWcA1T6dYnRywHaE7?w=278&h=185&c=7&r=0&o=5&pid=1.7">
-                    <p>Pranie sofy na sucho</p>
-                    <p>Koszt: $75</p>
-                </div>
-
-                <div class="service">
-                    <img src="https://th.bing.com/th/id/OIP.d5KltgCOIdZqF3cporjzOQHaFj?w=218&h=180&c=7&r=0&o=5&pid=1.7" height="140" width="310">
-                    <p>Sprzątanie wnętrz</p>
-                    <p>Koszt: $75</p>
-                </div>
-
-                <div class="service">
-                    <img src="https://th.bing.com/th/id/OIP.-DYMZTiwXbA7zwl89ekWnwHaE8?w=258&h=180&c=7&r=0&o=5&pid=1.7">
-                    <p>Sprzątanie całego domu</p>
-                    <p>Koszt: $100</p>
-                </div>
-
-            </div>
+      </div>
 
 
 </body>
+
 </html>
