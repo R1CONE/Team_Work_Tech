@@ -172,3 +172,20 @@ body {
             margin: 4px 2px;
             cursor: pointer;
         }
+
+        .centered-text{
+            text-align: center;
+        }
+
+        .align-right {
+            text-align: right;
+          }
+
+          .align-left {
+            text-align: left;
+          }
+
+          .left-align-image {
+            float: left; /* Задаем выравнивание по левой стороне */
+            margin-right: 10px; /* Добавляем небольшой отступ справа, чтобы создать пространство между текстом и изображением (по желанию) */
+        }
