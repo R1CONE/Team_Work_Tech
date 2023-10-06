@@ -185,7 +185,58 @@ body {
             text-align: left;
           }
 
-          .left-align-image {
-            float: left; /* Задаем выравнивание по левой стороне */
-            margin-right: 10px; /* Добавляем небольшой отступ справа, чтобы создать пространство между текстом и изображением (по желанию) */
+          
+
+            .right-align-image {
+                float: right; /* Задаем выравнивание по левой стороне */
+                margin-left: 10px; /* Добавляем небольшой отступ справа, чтобы создать пространство между текстом и изображением (по желанию) */
         }
+
+
+            .container {
+                display: flex;
+                align-items: center;
+        }
+
+            .text {
+                flex: 1;
+        }
+
+            .image {
+                flex: 1;
+                text-align: right;
+        }
+
+
+            
+
+.right-align-text {
+    text-align: right;
+}
+
+
+.right-align {
+    text-align: right;
+}
+
+.left-align-image {
+    float: left;
+}
+
+.text {
+    flex: 1;
+    text-align: left;
+}
+
+#button-link {
+    position: fixed;
+    top: 20px; /* Расстояние от верха страницы */
+    right: 20px; /* Расстояние от правого края страницы */
+}
+
+    /* Стилизация изображения кнопки (опционально) */
+    #button-link img {
+        width: 50px; /* Ширина изображения */
+        height: auto; /* Автоматическая высота для сохранения пропорций */
+        border: none; /* Уберите рамку, если она есть */
+    }
