@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hashowanie hasła i loginu</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+</head>
+<body>
+    <h1>Hashowanie hasła i loginu</h1>
+    <form id="loginForm">
+        <label for="username">Login:</label>
+        <input type="text" id="username" name="username" value="admin1"><br>
+        <label for="password">Hasło:</label>
+        <input type="password" id="password" name="password" value="admin1"><br>
+        <input type="submit" value="Zahaszuj">
+    </form>
+    
+    <h2>Wynik hashowania:</h2>
+    <div id="hashResult"></div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const hash = CryptoJS.SHA256(username + password).toString();
+            document.getElementById('hashResult').textContent = 'Login i hasło po zahaszowaniu: ' + hash;
+        });
+    </script>
+    <h3> Sergiusz Sałasiński 1P</h3>
+</body>
+</html>
