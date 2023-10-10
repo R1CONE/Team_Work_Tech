@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porównywanie hasła z haszem</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+</head>
+<body>
+    <h1>Porównywanie hasła z haszem</h1>
+    <form id="loginForm">
+        <label for="username">Login:</label>
+        <input type="text" id="username" name="username" value="admin1"><br>
+        <label for="password">Hasło:</label>
+        <input type="password" id="password" name="password" value="admin1"><br>
+        <input type="submit" value="Porównaj">
+    </form>
+    
+    <h2>Wynik:</h2>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const storedHash = 'c5e9fcbf8923fccac99e6f12e7d0bc8a5e6b46ea850fa7b23f7d2e30c4b05ad'; // Przechowywany hasz z bazy danych
+            const inputHash = CryptoJS.SHA256(username + password).toString();
+            if (inputHash === storedHash) {
+                document.getElementById('result').textContent = 'Hasło jest poprawne.';
+            } else {
+                document.getElementById('result').textContent = 'Hasło jest niepoprawne.';
+            }
+        });
+    </script>
+</body>
+</html>
