@@ -1,226 +1,196 @@
+/* Общие стили */
 body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-        /* Заголовок */
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }
+/* Заголовок */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
 
-            header img {
-                width: 190px;
-                height: 100px;
-            }
+header img {
+    width: 190px;
+    height: 100px;
+}
 
-        /* Навигация */
-        nav {
-            background-color: #444;
-            text-align: center;
-            padding: 10px 0;
-        }
+/* Навигация */
+nav {
+    background-color: #444;
+    text-align: center;
+    padding: 10px 0;
+}
 
-            nav a {
-                color: #fff;
-                text-decoration: none;
-                padding: 10px 20px;
-                margin: 0 10px;
-            }
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+}
 
-                nav a:hover {
-                    background-color: #555;
-                }
+nav a:hover {
+    background-color: #555;
+}
 
-        /* Общий контент */
-        .content {
-            padding: 20px;
-        }
+/* Общий контент */
+.content {
+    padding: 20px;
+}
 
-        /* Контейнер для сотрудников */
-        .employee-container {
-            display: flex;
-            align-items: center;
-            clear: both;
-            margin-bottom: 20px;
-        }
+/* Контейнер для сотрудников */
+.employee-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+}
 
-        /* Левая половина сотрудника */
-        .left-half {
-            flex: 1;
-            padding: 20px;
-        }
+.left-half,
+.right-half {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
 
-        /* Правая половина сотрудника */
-        .right-half {
-            flex: 1;
-            padding: 20px;
-            text-align: center;
-        }
+/* Информация о сотруднике */
+.employee-info {
+    margin-top: 20px;
+}
 
-        /* Информация о сотруднике */
-        .employee-info {
-            margin-top: 20px;
-        }
+/* Панель прокрутки */
+.scrolling-panel-container {
+    width: 300px;
+    overflow-x: auto;
+}
 
-        /* Панель прокрутки */
-        .scrolling-panel-container {
-            width: 300px;
-            overflow-x: auto;
-        }
+.scrolling-panel {
+    display: flex;
+}
 
-        .scrolling-panel {
-            display: flex;
-        }
+.left-image,
+.right-image {
+    float: left;
+}
 
-        .left-image {
-            float: left;
-        }
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
 
-        .right-image {
-            float: right;
-        }
+/* Контейнер с изображениями */
+.big-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    height: 800px;
+}
 
-        .clearfix::after {
-            content: "";
-            clear: both;
-            display: table;
-        }
+.image {
+    position: absolute;
+    width: 500px;
+    height: 400px;
+}
 
-        /* Контейнер с изображениями */
-        .big-image-container {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 1000px;
-            height: 800px;
-        }
+.image:nth-child(1) {
+    top: 0;
+    left: 0;
+}
 
-        .image {
-            position: absolute;
-            width: 500px;
-            height: 400px;
-        }
+.image:nth-child(2) {
+    top: 0;
+    left: 500px;
+}
 
-            .image:nth-child(1) {
-                top: 0;
-                left: 0;
-            }
+.image:nth-child(3) {
+    top: 400px;
+    left: 0;
+}
 
-            .image:nth-child(2) {
-                top: 0;
-                left: 500px;
-            }
+.image:nth-child(4) {
+    top: 400px;
+    left: 500px;
+}
 
-            .image:nth-child(3) {
-                top: 400px;
-                left: 0;
-            }
+/* Галерея изображений */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
 
-            .image:nth-child(4) {
-                top: 400px;
-                left: 500px;
-            }
+/* Стили для отдельного изображения */
+.image-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
 
-        /* Галерея изображений */
-        .image-gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
+.image-item img {
+    max-width: 100%;
+    height: auto;
+}
 
-        /* Стили для отдельного изображения */
-        .image-item {
-            border: 1px solid #ddd;
-            padding: 10px;
-            text-align: center;
-        }
+/* Сервисы */
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
 
-            .image-item img {
-                max-width: 100%;
-                height: auto;
-            }
+.service {
+    flex: 1;
+    max-width: 300px;
+    margin: 10px;
+    text-align: center;
+}
 
-        /* Сервисы */
-        .services {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-        }
+/* Кнопка */
+.my-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
 
-        .service {
-            flex: 1;
-            max-width: 300px;
-            margin: 10px;
-            text-align: center;
-        }
+/* Выравнивание текста и изображений */
+.centered-text {
+    text-align: center;
+}
 
-        .my-button {
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
-
-        .centered-text{
-            text-align: center;
-        }
-
-        .align-right {
-            text-align: right;
-          }
-
-          .align-left {
-            text-align: left;
-          }
-
-          
-
-            .right-align-image {
-                float: right; /* Задаем выравнивание по левой стороне */
-                margin-left: 10px; /* Добавляем небольшой отступ справа, чтобы создать пространство между текстом и изображением (по желанию) */
-        }
-
-
-            .container {
-                display: flex;
-                align-items: center;
-        }
-
-            .text {
-                flex: 1;
-        }
-
-            .image {
-                flex: 1;
-                text-align: right;
-        }
-
-
-            
-
-.right-align-text {
+.align-right {
     text-align: right;
 }
 
-
-.right-align {
-    text-align: right;
+.align-left {
+    text-align: left;
 }
 
 .left-align-image {
     float: left;
+}
+
+.right-align-image {
+    float: right;
+}
+
+/* Контейнер с текстом и изображением */
+.container {
+    display: flex;
+    align-items: center;
 }
 
 .text {
@@ -228,15 +198,20 @@ body {
     text-align: left;
 }
 
-#button-link {
-    position: fixed;
-    top: 20px; /* Расстояние от верха страницы */
-    right: 20px; /* Расстояние от правого края страницы */
+.image {
+    flex: 1;
+    text-align: right;
 }
 
-    /* Стилизация изображения кнопки (опционально) */
-    #button-link img {
-        width: 50px; /* Ширина изображения */
-        height: auto; /* Автоматическая высота для сохранения пропорций */
-        border: none; /* Уберите рамку, если она есть */
-    }
+/* Кнопка на странице */
+#button-link {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+#button-link img {
+    width: 50px;
+    height: auto;
+    border: none;
+}
