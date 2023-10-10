@@ -215,3 +215,10 @@ nav a:hover {
     height: auto;
     border: none;
 }
+
+.reg_fon {
+    background-size: cover; /* Масштабируем изображение, чтобы оно покрыло весь фон */
+    background-repeat: no-repeat; /* Отключаем повторение фонового изображения */
+    background-attachment: fixed; /* Фиксируем фон, чтобы он не прокручивался вместе с контентом */
+}
+background-image: url(''); /* Замените 'путь_к_вашей_картинке.jpg' на реальный путь к вашему изображению */
