@@ -1,27 +1,27 @@
 <?php
-$servername = "localhost"; // Имя сервера базы данных
-$username = "root"; // Имя пользователя базы данных
-$password = ""; // Пароль пользователя
-$database = "try_bd"; // Имя базы данных
+$servername = "localhost"; // Nazwa serwera bazy danych
+$username = "root"; // Nazwa użytkownika bazy danych
+$password = ""; // Hasło użytkownika
+$database = "try_bd"; // Nazwa bazy danych
 
-// Подключение к базе данных
+// Połączenie z bazą danych
 $conn = new mysqli($servername, $username, $password, $database);
 
-// Проверка соединения
+// Sprawdzenie połączenia
 if ($conn->connect_error) {
-    die("Ошибка подключения к базе данных: " . $conn->connect_error);
+    die("Błąd połączenia z bazą danych: " . $conn->connect_error);
 } else {
-    echo "Подключение к базе данных прошло успешно!";
+    echo "Połączenie z bazą danych powiodło się!";
     
-    // Выполнение SQL-запроса для выборки данных из таблицы "accounts"
+    // Wykonanie zapytania SQL w celu pobrania danych z tabeli "accounts"
     $sql = "SELECT id, login, password FROM accounts";
     $result = $conn->query($sql);
 
-    // Проверка наличия данных и их вывод
+    // Sprawdzenie dostępności danych i ich wyświetlenie
     if ($result->num_rows > 0) {
-        echo "<h2>Содержание таблицы accounts:</h2>";
+        echo "<h2>Zawartość tabeli accounts:</h2>";
         echo "<table>";
-        echo "<tr><th>ID</th><th>Login</th><th>Password</th></tr>";
+        echo "<tr><th>ID</th><th>Login</th><th>Hasło</th></tr>";
 
         while ($row = $result->fetch_assoc()) {
             echo "<tr><td>" . $row["id"] . "</td><td>" . $row["login"] . "</td><td>" . $row["password"] . "</td></tr>";
@@ -29,10 +29,10 @@ if ($conn->connect_error) {
 
         echo "</table>";
     } else {
-        echo "В таблице нет данных.";
+        echo "Brak danych w tabeli.";
     }
 
-    // Закрываем соединение
+    // Zamykamy połączenie
     $conn->close();
 }
 ?>
