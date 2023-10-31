@@ -14,7 +14,7 @@ if ($conn->connect_error) {
     echo "Połączenie z bazą danych powiodło się!";
     
     // Wykonanie zapytania SQL w celu pobrania danych z tabeli "accounts"
-    $sql = "SELECT id, login, password FROM accounts";
+    $sql = "SELECT id, login, password FROM accounts"; //id, login, password - to co macie w bd  // accounts - nazwa tabeli
     $result = $conn->query($sql);
 
     // Sprawdzenie dostępności danych i ich wyświetlenie
